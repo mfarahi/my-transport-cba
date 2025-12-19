@@ -53,3 +53,25 @@ st.line_chart(df.set_index("Year")["Cumulative NPV"])
 
 st.subheader("Annual Breakdown ($ Millions)")
 st.dataframe(df.style.format("{:.2f}"))
+import io
+
+st.divider() # Adds a visual line
+st.subheader("Export Results")
+
+# 1. Create a function to convert the table to Excel
+def to_excel(df):
+    output = io.BytesIO()
+    with pd.ExcelWriter(output, engine='openpyxl') as writer:
+        df.to_excel(writer, index=False, sheet_name='CBA_Results')
+    return output.getvalue()
+
+# 2. Generate the Excel data
+excel_data = to_excel(df)
+
+# 3. Create the Download Button
+st.download_button(
+    label="📥 Download Analysis as Excel",
+    data=excel_data,
+    file_name="transport_cba_report.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
