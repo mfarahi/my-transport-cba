@@ -5,7 +5,7 @@ import numpy_financial as npf
 import io
 
 # --- PAGE CONFIGURATION ---
-st.set_page_config(page_title="Transport CBA", layout="wide")
+st.set_page_config(page_title="Farahi Transport CBA", layout="wide")
 
 # --- MAIN TAB LAYOUT ---
 # We create the structure first, then fill each tab with content
@@ -20,10 +20,10 @@ tab_intro, tab_econ, tab_inputs, tab_results = st.tabs([
 # TAB 1: INSTRUCTIONS (THEORY & SCOPE)
 # ==========================================
 with tab_intro:
-    st.title("Transport Cost-Benefit Analysis Tool")
+    st.title("FARAHI TEST Cost-Benefit Analysis Tool")
     st.markdown("""
-    ### **Welcome to the Cal-B/C Transport Model**
-    This tool evaluates the economic viability of transportation infrastructure projects using the **Incremental Benefit-Cost** method.
+    ### **Welcome to the Transport Model**
+    This tool evaluates the economic viability of transportation infrastructure projects using the **Incremental Benefit-Cost** method within the World Bank's Integrated Project Appraisal Methodology.
     
     #### **How It Works (The Logic)**
     We compare two futures to determine the project's value:
