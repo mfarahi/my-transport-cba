@@ -1,3 +1,6 @@
 streamlit
 pandas
+numpy
+numpy-financial
+xlsxwriter
 openpyxl
