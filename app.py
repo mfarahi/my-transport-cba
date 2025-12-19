@@ -24,7 +24,7 @@ with tab_intro:
     st.markdown("""
     ### **Welcome to the Transport Model**
     This tool evaluates the economic viability of transportation infrastructure projects using the **Incremental Benefit-Cost** method within the World Bank's Integrated Project Appraisal Methodology.
-    
+    For this sample, I have populated it with data from an actual US Transport Project to test the background Python logic. Users can be filtered by their country Parameters. 
     #### **How It Works (The Logic)**
     We compare two futures to determine the project's value:
     1.  **Base Case (No-Build):** The "Do Nothing" scenario where traffic grows and congestion worsens.
