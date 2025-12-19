@@ -46,8 +46,35 @@ with tab_intro:
     """)
     
     st.info("👉 **Next Step:** Go to the **'1. Economic Parameters & Costs'** tab to set your valuation rules.")
-
-# ==========================================
+st.divider()
+    st.subheader("🧮 Calculation Methodologies")
+    st.markdown("""
+    This model adheres to the **Consumer Surplus (Rule of Half)** approach for user benefits and the **Net VMT** approach for societal externalities.
+    
+    #### **1. Travel Time & VOC Savings (Rule of Half)**
+    We account for induced demand by averaging the volume between the Base and Build scenarios. This ensures benefits aren't overestimated for new drivers.
+    
+    $$
+    \\text{Benefit}_{time} = \\Delta \\text{Cost per Trip} \\times \\left( \\frac{\\text{Vol}_{base} + \\text{Vol}_{build}}{2} \\right) \\times 365
+    $$
+    
+    *Where:* * $\\Delta \\text{Cost}$ is the difference in time/fuel cost between the old road and the new road.
+    * $\\text{Vol}$ is the Daily Traffic (ADT).
+    
+    #### **2. Safety & Emission Benefits (System-Wide)**
+    Externalities are calculated based on the total change in system exposure (Vehicle Miles Traveled). If the new road induces significant new traffic, these benefits may decrease or turn negative.
+    
+    $$
+    \\text{Benefit}_{safety} = (\\text{VMT}_{base} \\times \\text{Rate}_{base}) - (\\text{VMT}_{build} \\times \\text{Rate}_{build}) \\times \\text{Social Cost}
+    $$
+    
+    #### **3. Economic Indicators**
+    We discount future annual benefits ($B_t$) and costs ($C_t$) to Year 0 dollars using the Real Discount Rate ($r$).
+    
+    $$
+    \\text{NPV} = \\sum_{t=0}^{n} \\frac{B_t - C_t}{(1 + r)^t} \\quad \\quad \\text{B/C Ratio} = \\frac{\\sum \\text{PV}(B)}{\\sum \\text{PV}(C)}
+    $$
+    """)# ==========================================
 # TAB 2: ECONOMIC PARAMETERS & COSTS
 # ==========================================
 with tab_econ:
