@@ -46,7 +46,7 @@ with tab_intro:
     """)
     
     st.info("👉 **Next Step:** Go to the **'1. Economic Parameters & Costs'** tab to set your valuation rules.")
-st.divider()
+    st.divider()
     st.subheader("🧮 Calculation Methodologies")
     st.markdown("""
     This model adheres to the **Consumer Surplus (Rule of Half)** approach for user benefits and the **Net VMT** approach for societal externalities.
