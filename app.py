@@ -5,7 +5,7 @@ import numpy_financial as npf
 import io
 
 # --- PAGE CONFIGURATION ---
-st.set_page_config(page_title="Cal-B/C Transport Analyst", layout="wide")
+st.set_page_config(page_title="Transport CBA", layout="wide")
 
 # --- MAIN TAB LAYOUT ---
 # We create the structure first, then fill each tab with content
